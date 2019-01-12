@@ -1,4 +1,4 @@
-# KubernetesForDevs
+# Kubernetes For Devs
 
 This tutorial series hopes to be a useful primer for developers looking to bootstrap their way to using Kubernetes. Tutorials will be added as they become available.
 
