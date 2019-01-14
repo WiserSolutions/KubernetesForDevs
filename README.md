@@ -6,9 +6,9 @@ This tutorial series hopes to be a useful primer for developers looking to boots
 
 ## Getting Started
 
-This tutorial series will attempt to have a general focus and will focus on doing most exercises on a local workstation with an assumption that this is a OS X based workstation.
+This tutorial series will attempt to have a general focus with most exercises assuming a local workstation with an assumption that this is a OS X based workstation.
 
-While you can use [minikube](https://github.com/kubernetes/minikube), you will find it much easier to address networking and volume issues. If you haven't already installed Docker with Kubernetes, download [Docker CE](https://docs.docker.com/install#desktop) now.
+While you can use [minikube](https://github.com/kubernetes/minikube), you will find it much easier to address networking and volume issues if you use the Kubernetes available through *Docker CE*. If you haven't already installed Docker with Kubernetes, download [Docker CE](https://docs.docker.com/install#desktop) now.
 
 **Start Up Kubernetes**
 
