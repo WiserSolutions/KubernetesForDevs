@@ -1,12 +1,15 @@
 # Kubernetes For Devs
 
-This tutorial series hopes to be a useful primer for developers looking to bootstrap their way to using Kubernetes. Tutorials will be added as they become available.
+This workshop series hopes to be a useful primer for developers looking to bootstrap their way to using Kubernetes. workshops will be added as they become available.
 
-1. [Tutorial 1](tutorial-1.md) - Getting around in Kubernetes
+1. [Workshop 1](workshop-1.md) - Getting around in Kubernetes
+1. [Workshop 2](workshop-2.md) - I Can Deploy My Workloads
+1. [Workshop 3](workshop-3.md) - Charting Deployments with Helm
+2. [Workshop 4](workshop-4.md) - Production-ready Deployments
 
 ## Getting Started
 
-This tutorial series will attempt to have a general focus with most exercises assuming a local workstation with an assumption that this is a OS X based workstation.
+This workshop series will attempt to have a general focus with most exercises assuming a local workstation with an assumption that this is a OS X based workstation.
 
 While you can use [minikube](https://github.com/kubernetes/minikube), you will find it much easier to address networking and volume issues if you use the Kubernetes available through *Docker CE*. If you haven't already installed Docker with Kubernetes, download [Docker CE](https://docs.docker.com/install#desktop) now.
 
@@ -18,7 +21,7 @@ With the Preferences menu open visit the [Kubernetes setup instructions](https:/
 
 **Install Helm**
 
-Helm is [the package manager for Kubernetes](https://docs.helm.sh/) which we'll go into in more detail starting in Tutorial 3. 
+Helm is [the package manager for Kubernetes](https://docs.helm.sh/) which we'll go into in more detail starting in workshop 3. 
 
 To get the latest stable release...
 
@@ -50,5 +53,5 @@ Server: &version.Version{SemVer:"v2.12.1", GitCommit:"02a47c7249b1fc6d8fd3b94e6b
 ~~
 ```
 
-Done! You are now ready to start the tutorials
+Done! You are now ready to start the workshops
 

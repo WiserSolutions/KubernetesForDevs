@@ -1,6 +1,6 @@
 
 [KubernetesForDevs](/README.md) >> tutorial-1
 
-# Tutorial 1 - Getting Around In Kubernetes
+# Tutorial 4 - Production-ready Deployments
 
 [KubernetesForDevs](/README.md) >> tutorial-1
