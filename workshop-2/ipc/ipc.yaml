@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ws2-ipc
+spec:
+  initContainers:
+    - name: initializer
+      image: ipc-example:latest
+      imagePullPolicy: Never
+      command: ["./ipc"]
+
+  containers:
+  - name: producer
+    image: ipc-example:latest
+    imagePullPolicy: Never
+    command: 
+      - sh
+      - -c 
+      - "(echo The time is now $(date) | ./ipc -producer)"
+
+  - name: consumer
+    image: ipc-example:latest
+    imagePullPolicy: Never
+    command: ["./ipc", "-consumer"]
+  restartPolicy: Never

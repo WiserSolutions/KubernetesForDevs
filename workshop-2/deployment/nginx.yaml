@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ws2-2
+  labels:
+    app: ws2-2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ws2-2
+  template:
+    metadata:
+      name: ws2-2
+      labels:
+        app: ws2-2
+    spec:
+      containers:
+      - name: git-sync
+        image: k8s.gcr.io/git-sync:v3.0.1
+        volumeMounts:
+        - name: html
+          mountPath: /tmp/git
+        - name: git-secret
+          mountPath: /etc/git-secret
+        env:
+        - name: GIT_SYNC_REPO
+          value: git@github.com:WiserSolutions/kubernetes-workshop-2.git
+        - name: GIT_SYNC_DEST
+          value: nginx
+        - name: GIT_SYNC_SSH
+          value: "true"
+        securityContext:
+          runAsUser: 0
+
+      - name: proxy
+        image: nginx:alpine
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+        - name: nginx-proxy-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+
+      - name: webapp
+        image: nginx:alpine
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share
+          # mountPath: /usr/share/nginx/html
+          # subPath: "git-sync/html"
+
+      volumes:
+      - name: nginx-proxy-config
+        configMap:
+          name: nginx-conf
+      - name: git-secret
+        secret:
+          secretName: gitcreds
+          defaultMode: 256
+      - name: html
+        emptyDir: {}

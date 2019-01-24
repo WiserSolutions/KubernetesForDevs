@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ws2-2
+spec:
+  type: NodePort
+  selector:
+    app: ws2-2
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: http
